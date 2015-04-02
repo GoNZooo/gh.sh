@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# This file will have a line like
-# 'export GITHUB_REPO_TOKEN="token_value"'
+# This file will hold the token value
 if [[ -r "$GITHUB_REPO_TOKEN_LOC" ]]; then
-	source "$GITHUB_REPO_TOKEN_LOC"
+	GITHUB_REPO_TOKEN=$(cat "$GITHUB_REPO_TOKEN_LOC")
 else
 	exit 1
 fi
